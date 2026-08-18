@@ -3,40 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#16A34A">
-<script type="module" src="./firebase-config.js"></script>
-<script type="module" src="data:application/javascript;base64,Ly8gZmlyZWJhc2UtYnJpZGdlLmpzIC0g2KfZhNmG2LPYrtipINin2YTYtditINin2YTZhtmH2KfYptmK2KkKaW1wb3J0IHsgZGIsIGF1dGggfSBmcm9tICcuL2ZpcmViYXNlLWNvbmZpZy5qcyc7CmltcG9ydCB7IGRvYywgc2V0RG9jLCBnZXREb2MgfSBmcm9tICJodHRwczovL3d3dy5nc3RhdGljLmNvbS9maXJlYmFzZWpzLzEwLjEyLjAvZmlyZWJhc2UtZmlyZXN0b3JlLmpzIjsKaW1wb3J0IHsgb25BdXRoU3RhdGVDaGFuZ2VkLCBzaWduSW5Bbm9ueW1vdXNseSB9IGZyb20gImh0dHBzOi8vd3d3LmdzdGF0aWMuY29tL2ZpcmViYXNlanMvMTAuMTIuMC9maXJlYmFzZS1hdXRoLmpzIjsKCmxldCBpc1N5bmNpbmdGcm9tQ2xvdWQgPSBmYWxzZTsKCi8vIDEuINiq2LPYrNmK2YQg2K/YrtmI2YQg2KrZhNmC2KfYptmKINmE2Ygg2YXZgdmK2LQg2YrZiNiy2LEgKNi52LTYp9mGINmF2LTYsdmI2LnZgyDZiti02KrYutmEINmF2YYg2LrZitixINi12YHYrdipINiq2LPYrNmK2YQpCm9uQXV0aFN0YXRlQ2hhbmdlZChhdXRoLCBhc3luYyAodXNlcikgPT4gewogIGlmICghdXNlcikgewogICAgdHJ5IHsKICAgICAgYXdhaXQgc2lnbkluQW5vbnltb3VzbHkoYXV0aCk7CiAgICAgIHJldHVybjsgLy8g2YfZiti52YXZhCB0cmlnZ2VyINiq2KfZhtmKINio2LnYryDZhdinINmK2LPYrNmECiAgICB9IGNhdGNoIChlKSB7CiAgICAgIGNvbnNvbGUuZXJyb3IoItmB2LTZhCDYqtiz2KzZitmEINin2YTYr9iu2YjZhCDYp9mE2YXYrNmH2YjZhDoiLCBlKTsKICAgICAgcmV0dXJuOwogICAgfQogIH0KCiAgLy8gMi4g2KPZiNmEINmF2Kcg2YrZgdiq2K3YjCDYp9iz2K3YqCDYp9mE2K/Yp9iq2Kcg2YXZhiDZgdin2YrYsdio2YrYsgogIHRyeSB7CiAgICBjb25zdCByZWYgPSBkb2MoZGIsICJ1c2VycyIsIHVzZXIudWlkKTsKICAgIGNvbnN0IHNuYXAgPSBhd2FpdCBnZXREb2MocmVmKTsKICAgIGlmIChzbmFwLmV4aXN0cygpKSB7CiAgICAgIGNvbnN0IGRhdGEgPSBzbmFwLmRhdGEoKTsKICAgICAgaXNTeW5jaW5nRnJvbUNsb3VkID0gdHJ1ZTsgLy8g2LnYtNin2YYg2YXZhtix2KzYudi0INmG2K3Zgdi42YfYpyDYqtin2YbZiiDZiNiq2LnZhdmEIGxvb3AKICAgICAgZm9yIChsZXQga2V5IGluIGRhdGEpIHsKICAgICAgICAvLyDYp9it2YHYuNmH2Kcg2YHZiiDYp9mE2YTZiNmD2KfZhCDYudi02KfZhiDZhdmE2YHYp9iq2YMg2KfZhNmC2K/ZitmF2Kkg2KrZgtix2KfZh9inCiAgICAgICAgbG9jYWxTdG9yYWdlLnNldEl0ZW0oa2V5LCBKU09OLnN0cmluZ2lmeShkYXRhW2tleV0pKTsKICAgICAgfQogICAgICBpc1N5bmNpbmdGcm9tQ2xvdWQgPSBmYWxzZTsKICAgICAgY29uc29sZS5sb2coItiq2YUg2LPYrdioINin2YTYr9in2KrYpyDZhdmGINmB2KfZitix2KjZitiyOiIsIGRhdGEpOwogICAgICAvLyDZhNmIINi52KfZitiyINin2YTYtdmB2K3YqSDYqti52YXZhCDYqtit2K/ZitirINiq2YTZgtin2KbZiiDZhNmE2KjZitin2YbYp9iqINmB2YMg2KfZhNmD2YjZhdmG2Kog2KfZhNmE2Yog2KrYrdiqCiAgICAgIC8vIGxvY2F0aW9uLnJlbG9hZCgpOyAKICAgIH0KICB9IGNhdGNoIChlKSB7CiAgICBjb25zb2xlLmVycm9yKCLYrti32KMg2YHZiiDYs9it2Kgg2KfZhNiv2KfYqtinOiIsIGUpOwogIH0KfSk7CgovLyAzLiDYo9mKINit2KfYrNipINiq2KrYrdmB2Lgg2YHZiiDYp9mE2YTZiNmD2KfZhNiMINin2K3Zgdi42YfYpyDZgdmKINmB2KfZitix2KjZitiyINmD2YXYp9mGCmNvbnN0IG9yaWdpbmFsU2V0SXRlbSA9IGxvY2FsU3RvcmFnZS5zZXRJdGVtOwpsb2NhbFN0b3JhZ2Uuc2V0SXRlbSA9IGZ1bmN0aW9uKGtleSwgdmFsdWUpIHsKICBvcmlnaW5hbFNldEl0ZW0uYXBwbHkodGhpcywgYXJndW1lbnRzKTsKICAKICAvLyDZhNmIINin2K3ZhtinINio2YbYs9it2Kgg2YXZhiDYp9mE2YPZhNin2YjYryDZhdiq2LnZhdmE2LQg2K3Zgdi4INiq2KfZhtmKCiAgaWYgKGlzU3luY2luZ0Zyb21DbG91ZCkgcmV0dXJuOwogIGlmICghYXV0aC5jdXJyZW50VXNlcikgcmV0dXJuOwogIGlmICghdmFsdWUpIHJldHVybjsKCiAgdHJ5IHsKICAgIC8vINit2KfZiNmEINiq2YHYs9ixINin2YTZgtmK2YXYqSDZg9mAIEpTT07YjCDZhNmIINmB2LTZhNiqINin2K3Zgdi42YfYpyDZg9mG2LUg2LnYp9iv2YoKICAgIGxldCBwYXJzZWRWYWx1ZTsKICAgIHRyeSB7CiAgICAgIHBhcnNlZFZhbHVlID0gSlNPTi5wYXJzZSh2YWx1ZSk7CiAgICB9IGNhdGNoIHsKICAgICAgcGFyc2VkVmFsdWUgPSB2YWx1ZTsKICAgIH0KCiAgICBjb25zdCByZWYgPSBkb2MoZGIsICJ1c2VycyIsIGF1dGguY3VycmVudFVzZXIudWlkKTsKICAgIGNvbnN0IG9iaiA9IHt9OwogICAgb2JqW2tleV0gPSBwYXJzZWRWYWx1ZTsKICAgIAogICAgLy8gbWVyZ2U6IHRydWUg2YrYudmG2Yog2LbZitmBINin2YTYrdmC2YQg2K/ZhyDYqNizINmI2YXYqtit2LDZgdi0INin2YTYqNin2YLZigogICAgc2V0RG9jKHJlZiwgb2JqLCB7IG1lcmdlOiB0cnVlIH0pLmNhdGNoKGVyciA9PiBjb25zb2xlLmVycm9yKCLYrti32KMg2K3Zgdi4OiIsIGVycikpOwoKICB9IGNhdGNoIChlKSB7CiAgICBjb25zb2xlLmVycm9yKCLYrti32KMg2YHZiiBmaXJlYmFzZS1icmlkZ2U6IiwgZSk7CiAgfQp9OwoKY29uc29sZS5sb2coIkZpcmViYXNlIEJyaWRnZSDYtNi62KfZhCDinJMiKTsK"></script>
+<meta name="theme-color" content="#7C3AED">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="./icon-192.jpg">
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@500;600;700&display=swap" rel="stylesheet">
+<script src="themes.js"></script>
+<script type="module" src="./firebase-config.js"></script>
+<script type="module" src="./firebase-bridge.js"></script>
 <style>
-:root{
-  --bg:#F0FDF4; --bg-soft:#DCFCE7; --card:#FFFFFF; --card-border:#BBF7D0;
-  --text:#14532D; --text-soft:#4ADE80; --primary:#16A34A; --hero:#16A34A; --accent:#22C55E;
-  --nav-bg: rgba(255,255,255,0.9);
-}
+:root{--bg:#F5F3FF;--bg-soft:#EDE9FE;--card:#FFFFFF;--card-border:#DDD6FE;--text:#4C1D95;--text-soft:#A78BFA;--primary:#7C3AED;--hero:#7C3AED;--accent:#8B5CF6;--nav-bg:rgba(245,243,255,0.92)}
 *{box-sizing:border-box;margin:0;padding:0;font-family:'IBM Plex Sans Arabic',sans-serif}
-body{background:var(--bg);height:100dvh;overflow:hidden;transition: background.35s, color.35s}
+body{background:var(--bg);height:100dvh;overflow:hidden;transition:.3s}
 .pageWrap{position:absolute;inset:0 0 88px 0;background:var(--bg)}
 .page{position:absolute;inset:0;width:100%;height:100%;border:none;opacity:0;pointer-events:none;transition:opacity.25s;background:var(--bg)}
 .page.active{opacity:1;pointer-events:auto;z-index:2}
-.nav{
-  position:fixed;bottom:14px;left:14px;right:14px;height:70px;
-  background:var(--nav-bg);
-  backdrop-filter:blur(24px) saturate(200%);
-  -webkit-backdrop-filter:blur(24px) saturate(200%);
-  border:1.5px solid var(--card-border);
-  border-radius:22px;
-  display:flex;align-items:center;padding:7px;gap:6px;z-index:100;
-  box-shadow: 0 20px 40px -12px rgba(0,0,0,.15);
-  transition: all.35s;
-}
-.nav button{
-  flex:1;height:100%;border:none;background:transparent;
-  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;
-  border-radius:15px;color:var(--text-soft);font-size:9.5px;font-weight:700;cursor:pointer;transition:all.25s;position:relative
-}
-.nav button.icon{font-size:18px;transition:.25s}
-.nav button.active{background:var(--hero);color:#fff;box-shadow:0 8px 20px color-mix(in srgb, var(--hero) 30%, transparent);transform:translateY(-1px)}
-.nav button.active::after{content:'';position:absolute;bottom:6px;width:16px;height:3px;background:#fff;border-radius:99px;opacity:.8}
+.nav{position:fixed;bottom:14px;left:14px;right:14px;height:70px;background:var(--nav-bg);backdrop-filter:blur(24px) saturate(200%);-webkit-backdrop-filter:blur(24px) saturate(200%);border:1.5px solid var(--card-border);border-radius:22px;display:flex;align-items:center;padding:7px;gap:6px;z-index:100;box-shadow:0 20px 40px -12px rgba(0,0,0,.15)}
+.nav button{flex:1;height:100%;border:none;background:transparent;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;border-radius:15px;color:var(--text-soft);font-size:9.5px;font-weight:700;cursor:pointer}
+.nav button.active{background:var(--hero);color:#fff;box-shadow:0 8px 20px color-mix(in srgb, var(--hero) 30%, transparent)}
 </style>
 </head>
 <body>
@@ -47,64 +30,25 @@ body{background:var(--bg);height:100dvh;overflow:hidden;transition: background.3
   <iframe data-page="tasks.html" src="about:blank" class="page" title="tasks"></iframe>
 </div>
 <nav class="nav">
-  <button class="active" onclick="switchPage('home.html',this)"><span class="icon">🏠</span><span>الرئيسية</span></button>
-  <button onclick="switchPage('daily.html',this)"><span class="icon">📊</span><span>اليومية</span></button>
-  <button onclick="switchPage('attendance.html',this)"><span class="icon">⏱️</span><span>الحضور</span></button>
-  <button onclick="switchPage('tasks.html',this)"><span class="icon">✓</span><span>المهام</span></button>
+  <button class="active" onclick="switchPage('home.html',this)"><span>🏠</span><span>الرئيسية</span></button>
+  <button onclick="switchPage('daily.html',this)"><span>📊</span><span>اليومية</span></button>
+  <button onclick="switchPage('attendance.html',this)"><span>⏱️</span><span>الحضور</span></button>
+  <button onclick="switchPage('tasks.html',this)"><span>✓</span><span>المهام</span></button>
 </nav>
 <script>
-const themes={
-  black: {"--bg":"#F4F4F5","--bg-soft":"#E4E4E7","--card":"#FFFFFF","--card-border":"#D4D4D8","--text":"#18181B","--text-soft":"#71717A","--primary":"#18181B","--hero":"#18181B","--accent":"#18181B","--nav-bg":"rgba(255,255,255,0.9)"},
-  red: {"--bg":"#FFF1F2","--bg-soft":"#FFE4E6","--card":"#FFFFFF","--card-border":"#FECDD3","--text":"#881337","--text-soft":"#FB7185","--primary":"#E11D48","--hero":"#E11D48","--accent":"#F43F5E","--nav-bg":"rgba(255,241,242,0.92)"},
-  purple: {"--bg":"#F5F3FF","--bg-soft":"#EDE9FE","--card":"#FFFFFF","--card-border":"#DDD6FE","--text":"#4C1D95","--text-soft":"#A78BFA","--primary":"#7C3AED","--hero":"#7C3AED","--accent":"#8B5CF6","--nav-bg":"rgba(245,243,255,0.92)"},
-  green: {"--bg":"#F0FDF4","--bg-soft":"#DCFCE7","--card":"#FFFFFF","--card-border":"#BBF7D0","--text":"#14532D","--text-soft":"#4ADE80","--primary":"#16A34A","--hero":"#16A34A","--accent":"#22C55E","--nav-bg":"rgba(240,253,244,0.92)"},
-  blue: {"--bg":"#EFF6FF","--bg-soft":"#DBEAFE","--card":"#FFFFFF","--card-border":"#BFDBFE","--text":"#1E3A8A","--text-soft":"#60A5FA","--primary":"#2563EB","--hero":"#2563EB","--accent":"#3B82F6","--nav-bg":"rgba(239,246,255,0.92)"},
-  orange: {"--bg":"#FFFBEB","--bg-soft":"#FEF3C7","--card":"#FFFFFF","--card-border":"#FDE68A","--text":"#92400E","--text-soft":"#FBBF24","--primary":"#D97706","--hero":"#D97706","--accent":"#F59E0B","--nav-bg":"rgba(255,251,235,0.92)"}
-};
-
-function applyTheme(name){
-  let t=themes[name]; if(!t) return;
-  Object.entries(t).forEach(([k,v])=>document.documentElement.style.setProperty(k,v));
-  localStorage.setItem('omar_theme',name);
-  localStorage.setItem('theme',name);
-  let meta=document.querySelector('meta[name="theme-color"]'); if(meta) meta.content=t["--hero"];
-  document.querySelectorAll('.page').forEach(f=>{
-    try{ if(f.contentDocument && f.contentDocument.documentElement){
-      Object.entries(t).forEach(([k,v])=>f.contentDocument.documentElement.style.setProperty(k,v));
-    }}catch(e){}
-  });
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js'));
 }
-
 const frames=document.querySelectorAll('.page');
 function switchPage(name,btn){
   frames.forEach(f=>{
     const is=f.dataset.page===name;
     f.classList.toggle('active',is);
-    if(is && f.src.includes('about:blank')){
-      f.src=name;
-      f.onload=()=>{
-        let cur=localStorage.getItem('omar_theme')||'green';
-        let t=themes[cur]; if(t && f.contentDocument){
-          Object.entries(t).forEach(([k,v])=>f.contentDocument.documentElement.style.setProperty(k,v));
-        }
-      };
-    }else if(is && f.contentDocument){
-      let cur=localStorage.getItem('omar_theme')||'green';
-      let t=themes[cur]; if(t){
-        Object.entries(t).forEach(([k,v])=>f.contentDocument.documentElement.style.setProperty(k,v));
-      }
-    }
+    if(is && f.src.includes('about:blank')){ f.src=name; }
   });
   document.querySelectorAll('.nav button').forEach(b=>b.classList.remove('active'));
   btn.classList.add('active');
-  if(navigator.vibrate) navigator.vibrate(12);
 }
-
-applyTheme(localStorage.getItem('omar_theme')||'green');
-window.addEventListener('storage',()=>{ let th=localStorage.getItem('omar_theme'); if(th) applyTheme(th); });
-setInterval(()=>{ let th=localStorage.getItem('omar_theme'); if(th && themes[th]) applyTheme(th); },500);
-
-window.applyTheme = applyTheme;
 </script>
 </body>
 </html>
