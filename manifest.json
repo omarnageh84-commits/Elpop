@@ -1,0 +1,32 @@
+{
+  "name": "يومياتي",
+  "short_name": "يومياتي",
+  "description": "يومياتي - نظام ادارة المصاريف والحضور والمهام",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#F5F3FF",
+  "theme_color": "#7C3AED",
+  "orientation": "portrait",
+  "dir": "rtl",
+  "lang": "ar",
+  "icons": [
+    {
+      "src": "./icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./icon-1024.png",
+      "sizes": "1024x1024",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
